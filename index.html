@@ -2,29 +2,96 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Rob Hoffmann</title>
+    <style>
+      /* Responsive, minimal styling to improve readability & touch targets on mobile */
+      :root {
+        --max-width: 800px;
+        --content-padding: 16px;
+        --muted: #444;
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        color: #111;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .wrapper {
+        box-sizing: border-box;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: calc(var(--content-padding) * 1.25);
+      }
+
+      h1 {
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        margin: 0 0 0.5rem 0;
+      }
+
+      p {
+        margin: 0 0 1rem 0;
+        line-height: 1.45;
+        color: var(--muted);
+      }
+
+      ul {
+        padding-left: 1.25rem;
+        margin: 0 0 1rem 0;
+      }
+
+      a {
+        color: #0366d6;
+        text-decoration: none;
+      }
+
+      /* Make links easier to tap on mobile */
+      .link-list a {
+        display: inline-block;
+        padding: 8px 10px;
+        border-radius: 6px;
+      }
+
+      /* Respect user's reduced motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        * { transition: none !important; }
+      }
+
+      /* Slightly increase spacing on small screens */
+      @media (max-width: 420px) {
+        .wrapper { padding: calc(var(--content-padding) * 1.5); }
+        ul { padding-left: 1rem; }
+      }
+    </style>
   </head>
 
   <body>
-    <h1>Rob Hoffmann</h1>
-    <p>
-      Experienced software engineer specializing in web development (TypeScript,
-      React, Node, etc.)
-    </p>
-    <p>
-      I value minimalism and privacy. To that end, my site is intentionally
-      devoid of flair and I do not maintain any non-professional socials.
-    </p>
-    <ul>
-      <li><a href="https://github.com/rhoffmann8">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/rhoffmann8">LinkedIn</a></li>
-    </ul>
-    <p>
-      <a href="mailto:contact@robhoffmann.me">Contact me</a>
-    </p>
-    <p>
-      My previous interactive site can be found at
-      <a href="https://desktop.robhoffmann.me/">desktop.robhoffmann.me</a>.
-    </p>
+    <div class="wrapper">
+      <h1>Rob Hoffmann</h1>
+      <p>
+        Experienced software engineer specializing in web development (TypeScript,
+        React, Node, etc.)
+      </p>
+      <p>
+        I value minimalism and privacy. To that end, my site is intentionally
+        devoid of flair and I do not maintain any non-professional socials.
+      </p>
+      <ul class="link-list">
+        <li><a href="https://github.com/rhoffmann8">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/rhoffmann8">LinkedIn</a></li>
+      </ul>
+      <p>
+        <a href="mailto:contact@robhoffmann.me">Contact me</a>
+      </p>
+      <p>
+        My previous interactive site can be found at
+        <a href="https://desktop.robhoffmann.me/">desktop.robhoffmann.me</a>.
+      </p>
+    </div>
   </body>
 </html>
